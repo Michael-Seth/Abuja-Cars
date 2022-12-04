@@ -1,4 +1,28 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&display=swap");
+:root {
+  --backgroundColor: #f7f7f7;
+  --blacWhiteColor: #000000;
+  --lightDarkColor: #ffffff;
+  --greenColor: #00cc66;
+  --profileName: #2c2c2c1a;
+  --swiperBg: #000000cc;
+  --profileEmail: #2c2c2c1a;
+  --ashToWhite: #858585;
+  --ashToWhiteActive: rgb(44, 44, 44);
+  --textColor: #383838;
+}
+.light {
+  --backgroundColor: #070714;
+  --blacWhiteColor: #ffffff;
+  --lightDarkColor: #0b0b1b;
+  --greenColor: #ffeb3b;
+  --profileName: #ffffffe5;
+  --swiperBg: #ffffffcc;
+  --profileEmail: #ffffffe5;
+  --ashToWhite: #616161;
+  --ashToWhiteActive: #fff;
+  --textColor: #d8d8d8;
+}
 * {
   box-sizing: border-box;
 }
@@ -8,16 +32,17 @@ html::-webkit-scrollbar {
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
-  background-color: #f2f4f8;
+  font-family: "Montserrat", sans-serif;
+  background-color: var(--backgroundColor);
   margin: 0;
   box-sizing: border-box;
+  color: var(--textColor);
 }
 
 a {
   text-decoration: none;
   display: block;
-  color: #000000;
+  color: var(--blacWhiteColor);
 }
 
 button {
@@ -30,14 +55,14 @@ button {
 .emailInput,
 .nameInput,
 .textarea {
-  box-shadow: rgba(0, 0, 0, 0.11);
+  box-shadow: #0000001c;
   border: none;
-  background: #ffffff;
+  background: var(--lightDarkColor);
   border-radius: 3rem;
   height: 3rem;
   width: 100%;
   outline: none;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   padding: 0 3rem;
   font-size: 1rem;
 }
@@ -55,14 +80,15 @@ button {
   padding: 1rem 1.5rem;
   height: 300px;
   border-radius: 1rem;
+  color: var(--textColor);
 }
 
 .primaryButton {
   cursor: pointer;
-  background: #00cc66;
-  border-radius: 1rem;
+  background: var(--greenColor);
+  border-radius: 0.31rem;
   padding: 0.85rem 2rem;
-  color: #ffffff;
+  color: var(--lightDarkColor);
   font-weight: 600;
   font-size: 1.25rem;
   width: 80%;
@@ -121,7 +147,7 @@ button {
   width: 64px;
   height: 64px;
   border: 8px solid;
-  border-color: #00cc66 transparent #00cc66 transparent;
+  border-color: var(--greenColor) transparent var(--greenColor) transparent;
   border-radius: 50%;
   animation: spin 1.2s linear infinite;
 }
@@ -144,8 +170,8 @@ button {
   left: 0;
   bottom: 0;
   right: 0;
-  height: 85px;
-  background-color: #ffffff;
+  height: 75px;
+  background-color: var(--lightDarkColor);
   z-index: 1000;
   display: flex;
   justify-content: center;
@@ -176,22 +202,24 @@ button {
 .navbarListItemName,
 .navbarListItemNameActive {
   margin-top: 0.25rem;
-  font-size: 14px;
-  font-weight: 600;
-  color: #8f8f8f;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--ashToWhite);
 }
 .navbarListItemNameActive {
-  color: #2c2c2c;
+  color: var(--ashToWhiteActive);
 }
 
 .nameInput {
   margin-bottom: 2rem;
-  background: url('./assets/svg/badgeIcon.svg') #ffffff 2.5% center no-repeat;
+  background: url("./assets/svg/badgeIcon.svg") var(--lightDarkColor) 2.5%
+    center no-repeat;
 }
 
 .emailInput {
   margin-bottom: 2rem;
-  background: url('./assets/svg/personIcon.svg') #ffffff 2.5% center no-repeat;
+  background: url("./assets/svg/personIcon.svg") var(--lightDarkColor) 2.5%
+    center no-repeat;
 }
 
 .passwordInputDiv {
@@ -200,7 +228,8 @@ button {
 
 .passwordInput {
   margin-bottom: 2rem;
-  background: url('./assets/svg/lockIcon.svg') #ffffff 2.5% center no-repeat;
+  background: url("./assets/svg/lockIcon.svg") var(--lightDarkColor) 2.5% center
+    no-repeat;
 }
 
 .showPassword {
@@ -213,7 +242,7 @@ button {
 
 .forgotPasswordLink {
   cursor: pointer;
-  color: #00cc66;
+  color: var(--greenColor);
   font-weight: 600;
   text-align: right;
 }
@@ -253,7 +282,7 @@ button {
   align-items: center;
   width: 3rem;
   height: 3rem;
-  background-color: #00cc66;
+  background-color: var(--greenColor);
   border-radius: 50%;
 }
 @media (min-width: 1024px) {
@@ -279,7 +308,7 @@ button {
   margin: 1.5rem;
   width: 3rem;
   height: 3rem;
-  background-color: #ffffff;
+  background-color: var(--lightDarkColor);
   border-radius: 50%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
 }
@@ -290,7 +319,7 @@ button {
 
 .registerLink {
   margin-top: 4rem;
-  color: #00cc66;
+  color: var(--greenColor);
   font-weight: 600;
   text-align: center;
   margin-bottom: 3rem;
@@ -322,7 +351,7 @@ button {
 }
 
 .swiper-pagination-bullet-active {
-  background-color: #ffffff !important;
+  background-color: var(--lightDarkColor) !important;
 }
 
 .swiperSlideDiv {
@@ -337,14 +366,14 @@ button {
 }
 
 .swiperSlideText {
-  color: #ffffff;
+  color: var(--lightDarkColor);
   position: absolute;
   top: 70px;
   left: 0;
   font-weight: 600;
   max-width: 90%;
   font-size: 1.25rem;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: var(--swiperBg);
   padding: 0.5rem;
 }
 @media (min-width: 1024px) {
@@ -354,13 +383,13 @@ button {
 }
 
 .swiperSlidePrice {
-  color: #000000;
+  color: var(--blacWhiteColor);
   position: absolute;
   top: 143px;
   left: 11px;
   font-weight: 600;
   max-width: 90%;
-  background-color: #ffffff;
+  background-color: var(--lightDarkColor);
   padding: 0.25rem 0.5rem;
   border-radius: 1rem;
 }
@@ -382,7 +411,7 @@ button {
   min-height: 115px;
   height: 15vw;
   width: 100%;
-  border-radius: 1.5rem;
+  border-radius: 0.3rem;
   object-fit: cover;
   margin: 0 auto;
 }
@@ -413,9 +442,9 @@ button {
 }
 
 .categoryListingImg {
-  width: 30%;
+  width: 33%;
   height: 100px;
-  border-radius: 1.5rem;
+  border-radius: 0.3rem;
   object-fit: cover;
 }
 @media (min-width: 1024px) {
@@ -451,13 +480,14 @@ button {
   margin-top: 0.5rem;
   font-weight: 600;
   font-size: 1.1rem;
-  color: #00cc66;
+  color: var(--greenColor);
   margin-bottom: 0;
   display: flex;
   align-items: center;
 }
 
 .categoryListingInfoDiv {
+  margin-top: 1rem;
   display: flex;
   justify-content: space-between;
   max-width: 275px;
@@ -471,14 +501,14 @@ button {
 .loadMore {
   cursor: pointer;
   width: 8rem;
+  font-size: 0.8rem;
   margin: 0 auto;
   text-align: center;
-  padding: 0.25rem 0.5rem;
-  background-color: #000000;
-  color: #ffffff;
+  padding: 0.5rem 0.5rem;
+  background-color: var(--blacWhiteColor);
+  color: var(--lightDarkColor);
   font-weight: 600;
-  border-radius: 1rem;
-  opacity: 0.7;
+  border-radius: 0.2rem;
   margin-top: 2rem;
 }
 
@@ -492,7 +522,7 @@ button {
   top: 3%;
   right: 5%;
   z-index: 2;
-  background-color: #ffffff;
+  background-color: var(--lightDarkColor);
   border-radius: 50%;
   width: 3rem;
   height: 3rem;
@@ -514,9 +544,9 @@ button {
 
 .discountPrice {
   padding: 0.25rem 0.5rem;
-  background-color: #000000;
-  color: #ffffff;
-  border-radius: 1rem;
+  background-color: var(--blacWhiteColor);
+  color: var(--lightDarkColor);
+  border-radius: 0.3rem;
   font-size: 0.8rem;
   font-weight: 600;
   display: inline;
@@ -524,9 +554,9 @@ button {
 
 .listingType {
   padding: 0.25rem 0.5rem;
-  background-color: #00cc66;
-  color: #ffffff;
-  border-radius: 2rem;
+  background-color: var(--greenColor);
+  color: var(--lightDarkColor);
+  border-radius: 1rem;
   display: inline;
   font-weight: 600;
   font-size: 0.8rem;
@@ -566,7 +596,7 @@ button {
   top: 9%;
   right: 5%;
   z-index: 2;
-  background-color: #ffffff;
+  background-color: var(--lightDarkColor);
   border-radius: 1rem;
   padding: 0.5rem 1rem;
   font-weight: 600;
@@ -621,13 +651,13 @@ button {
 
 .logOut {
   cursor: pointer;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 1rem;
   font-weight: 600;
-  color: #ffffff;
-  background-color: #00cc66;
+  color: var(--lightDarkColor);
+  background-color: var(--greenColor);
   padding: 0.25rem 0.75rem;
-  border-radius: 1rem;
+  border-radius: 0.3rem;
 }
 
 .profileDetailsHeader {
@@ -643,11 +673,11 @@ button {
 .changePersonalDetails {
   cursor: pointer;
   font-weight: 600;
-  color: #00cc66;
+  color: var(--greenColor);
 }
 
 .profileCard {
-  background-color: #ffffff;
+  background-color: var(--lightDarkColor);
   border-radius: 1rem;
   padding: 1rem;
   box-shadow: rgba(0, 0, 0, 0.2);
@@ -671,7 +701,7 @@ button {
   width: 100%;
 }
 .profileNameActive {
-  background-color: rgba(44, 44, 44, 0.1);
+  background-color: var(--profileName);
 }
 
 .profileEmail,
@@ -681,15 +711,15 @@ button {
   font-weight: 500;
 }
 .profileEmailActive {
-  background-color: rgba(44, 44, 44, 0.1);
+  background-color: var(--profileEmail);
 }
 
 .profileAddressActive {
-  background-color: rgba(44, 44, 44, 0.1);
+  background-color: var(--profileEmail);
 }
 
 .createListing {
-  background-color: #ffffff;
+  background-color: var(--lightDarkColor);
   border-radius: 1rem;
   padding: 0.25rem 1rem;
   box-shadow: rgba(0, 0, 0, 0.2);
@@ -728,18 +758,19 @@ button {
 .formInputFile,
 .formButtonActive {
   padding: 0.9rem 3rem;
-  background-color: #ffffff;
-  font-weight: 600;
-  border-radius: 1rem;
-  font-size: 1rem;
+  background-color: var(--lightDarkColor);
+  font-weight: 500;
+  border-radius: 0.3rem;
+  font-size: 0.85rem;
   margin: 0.5rem 0.5rem 0 0;
   display: flex;
   justify-content: center;
   align-items: center;
+  color: var(--textColor);
 }
 .formButtonActive {
-  background-color: #00cc66;
-  color: #ffffff;
+  background-color: var(--greenColor);
+  color: var(--lightDarkColor);
 }
 
 .flex {
@@ -753,12 +784,12 @@ button {
 .formInputFile {
   border: none;
   outline: none;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 .formInputSmall,
 .formInputFile {
   margin-right: 3rem;
-  padding: 0.9rem 0.7rem;
+  padding: 0.9rem 2.5rem;
   text-align: center;
 }
 
@@ -769,7 +800,7 @@ button {
 }
 
 .formInputAddress {
-  padding: 0.9rem 1rem;
+  padding: 0.6rem 1rem 2rem 1rem;
   width: 90%;
   max-width: 326px;
 }
@@ -793,9 +824,9 @@ button {
   width: 100%;
 }
 .formInputFile::-webkit-file-upload-button {
-  background-color: #00cc66;
+  background-color: var(--greenColor);
   border: none;
-  color: #ffffff;
+  color: var(--lightDarkColor);
   font-weight: 600;
   padding: 0.5rem 0.75rem;
   border-radius: 1rem;
@@ -812,10 +843,61 @@ button {
 
 .offerBadge {
   padding: 0.25rem 0.5rem;
-  background-color: #000000;
-  color: #ffffff;
+  background-color: var(--blacWhiteColor);
+  color: var(--lightDarkColor);
   border-radius: 1rem;
   margin-left: 1rem;
   font-size: 0.8rem;
   opacity: 0.75;
+}
+/* =================================
+        New Styles  
+=================================== */
+.swiper {
+  width: 100%;
+  height: 32.5vh;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.headerContainer {
+  width: 100%;
+  height: 4rem;
+  background-color: var(--lightDarkColor);
+}
+.headerContainer .headbarBox {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  height: 100%;
+  margin: auto;
+  align-items: center;
+}
+.mySwiper {
+  border-radius: 0.5rem;
 }

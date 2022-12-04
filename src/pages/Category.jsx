@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import {
   collection,
   getDocs,
@@ -13,11 +14,11 @@ import { toast } from "react-toastify";
 import Spinner from "../components/Spinner";
 import ListingItem from "../components/ListingItem";
 
-function Offers() {
+function Category() {
   const [listings, setListings] = useState(null);
   const [loading, setLoading] = useState(true);
   const [lastFetchedListing, setLastFetchedListing] = useState(null);
-
+  const params = useParams();
   useEffect(() => {
     const fetchListings = async () => {
       try {
@@ -27,9 +28,9 @@ function Offers() {
         //Create a query
         const q = query(
           listingsRef,
-          where("offer", "==", true),
+          where("type", "==", params.categoryName),
           orderBy("timestamp", "desc"),
-          limit(4)
+          limit(1)
         );
 
         //Execute the Query
@@ -48,11 +49,11 @@ function Offers() {
         setListings(listings);
         setLoading(false);
       } catch (error) {
-        toast.error("Could not fetch Cars");
+        toast.error("Could not fetch listings");
       }
     };
     fetchListings();
-  }, []);
+  }, [params.categoryName]);
 
   //Pagination / Load More
   const onFetchMoreListings = async () => {
@@ -63,10 +64,10 @@ function Offers() {
       //Create a query
       const q = query(
         listingsRef,
-        where("offer", "==", true),
+        where("type", "==", params.categoryName),
         orderBy("timestamp", "desc"),
         startAfter(lastFetchedListing),
-        limit(3)
+        limit(1)
       );
 
       //Execute the Query
@@ -85,16 +86,16 @@ function Offers() {
       setListings((prevstate) => [...prevstate, ...listings]);
       setLoading(false);
     } catch (error) {
-      toast.info("No Cars Available");
-      const empty = toast.info("No Cars Available");
-      return empty;
+      toast.info("No More Cars Available");
     }
   };
 
   return (
     <div className="category">
       <header>
-        <p className="pageHeader">Explore</p>
+        <p className="pageHeader">
+          {params.categoryName === "rent" ? "Cars for Hire" : "Cars for Sale"}
+        </p>
       </header>
       {loading ? (
         <Spinner />
@@ -111,6 +112,8 @@ function Offers() {
               ))}
             </ul>
           </main>
+          <br />
+          <br />
           {lastFetchedListing ? (
             <p className="loadMore" onClick={onFetchMoreListings}>
               Load More
@@ -120,10 +123,10 @@ function Offers() {
           )}
         </>
       ) : (
-        <p>There are no current offers</p>
+        <p>No listings for {params.categoryName}</p>
       )}
     </div>
   );
 }
 
-export default Offers;
+export default Category;

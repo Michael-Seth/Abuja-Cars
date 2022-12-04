@@ -19,9 +19,13 @@ function Navbar() {
         <ul className="navbarListItems">
           <li className="navbarListItem" onClick={() => navigate("/")}>
             <ExploreIcon
-              fill={pathMatchRoute("/") ? "#2c2c2c" : "#9f9f9f"}
-              width="36px"
-              height="36px"
+              fill={
+                pathMatchRoute("/")
+                  ? "var(--ashToWhiteActive)"
+                  : "var(--ashToWhite)"
+              }
+              width="24px"
+              height="24px"
             />
             <p
               className={
@@ -30,14 +34,18 @@ function Navbar() {
                   : "navbarListItemName"
               }
             >
-              Explore
+              Home
             </p>
           </li>
           <li className="navbarListItem" onClick={() => navigate("/offers")}>
             <OfferIcon
-              fill={pathMatchRoute("/offers") ? "#2c2c2c" : "#9f9f9f"}
-              width="36px"
-              height="36px"
+              fill={
+                pathMatchRoute("/offers")
+                  ? "var(--ashToWhiteActive)"
+                  : "var(--ashToWhite)"
+              }
+              width="24px"
+              height="24px"
             />
             <p
               className={
@@ -46,14 +54,18 @@ function Navbar() {
                   : "navbarListItemName"
               }
             >
-              Offer
+              Explore
             </p>
           </li>
           <li className="navbarListItem" onClick={() => navigate("/profile")}>
             <PersonOutIcon
-              fill={pathMatchRoute("/profile") ? "#2c2c2c" : "#9f9f9f"}
-              width="36px"
-              height="36px"
+              fill={
+                pathMatchRoute("/profile")
+                  ? "var(--ashToWhiteActive)"
+                  : "var(--ashToWhite)"
+              }
+              width="24px"
+              height="24px"
             />
             <p
               className={
