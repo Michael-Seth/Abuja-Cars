@@ -9,19 +9,19 @@
   --profileEmail: #2c2c2c1a;
   --ashToWhite: #858585;
   --ashToWhiteActive: rgb(44, 44, 44);
-  --textColor: #383838;
+  --textColor: #2c2c2c;
 }
 .light {
-  --backgroundColor: #0f0f22;
+  --backgroundColor: #0e0e1b;
   --blacWhiteColor: #ffffff;
-  --lightDarkColor: #070714;
+  --lightDarkColor: #070711;
   --greenColor: #ffeb3b;
   --profileName: #ffffffe5;
   --swiperBg: #ffffffcc;
   --profileEmail: #ffffffe5;
   --ashToWhite: #616161;
   --ashToWhiteActive: #fff;
-  --textColor: #d8d8d8;
+  --textColor: #ececec;
 }
 * {
   box-sizing: border-box;
