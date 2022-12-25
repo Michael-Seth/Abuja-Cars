@@ -3,7 +3,7 @@
   --backgroundColor: #f7f7f7;
   --blacWhiteColor: #000000;
   --lightDarkColor: #ffffff;
-  --greenColor: #00cc66;
+  --greenColor: #088f62;
   --profileName: #2c2c2c1a;
   --swiperBg: #000000cc;
   --profileEmail: #2c2c2c1a;
@@ -37,6 +37,11 @@ body {
   margin: 0;
   box-sizing: border-box;
   color: var(--textColor);
+  margin: auto;
+}
+
+.browserWrapper {
+  width: 400px;
 }
 
 a {
@@ -100,8 +105,9 @@ button {
 
 .removeIcon {
   cursor: pointer;
+  padding: 2px;
   position: absolute;
-  top: -3%;
+  top: 2%;
   right: -2%;
 }
 .editIcon {
@@ -423,6 +429,7 @@ button {
 
 .category {
   margin-bottom: 10rem;
+  margin-top: 5rem;
 }
 
 .categoryListings {
@@ -472,14 +479,14 @@ button {
 
 .categoryListingName {
   font-weight: 600;
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   margin: 0;
 }
 
 .categoryListingPrice {
   margin-top: 0.5rem;
   font-weight: 600;
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: var(--greenColor);
   margin-bottom: 0;
   display: flex;
@@ -519,7 +526,7 @@ button {
 .shareIconDiv {
   cursor: pointer;
   position: fixed;
-  top: 3%;
+  top: 10%;
   right: 5%;
   z-index: 2;
   background-color: var(--lightDarkColor);
@@ -641,6 +648,7 @@ button {
 
 .profile {
   margin-bottom: 10rem;
+  margin-top: 3rem;
 }
 
 .profileHeader {
@@ -736,7 +744,7 @@ button {
   font-weight: 600;
 }
 
-.lisitingsList {
+.listingsList {
   padding: 0;
 }
 
@@ -889,6 +897,10 @@ button {
   width: 100%;
   height: 4rem;
   background-color: var(--lightDarkColor);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5500;
 }
 .headerContainer .headbarBox {
   display: flex;

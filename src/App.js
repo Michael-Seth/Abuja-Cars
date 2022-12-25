@@ -18,7 +18,7 @@ import Headbar from "./components/Headbar";
 function App() {
   return (
     <>
-      <Router>
+      <Router className="browserWrapper">
         <Headbar />
         <Routes>
           <Route path="/" element={<Explore />} />
