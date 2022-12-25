@@ -8,7 +8,9 @@ function Explore() {
   return (
     <div className="explore">
       <header>
-        <p className="pageHeader">Home</p>
+        <p className="pageHeader" style={{ marginTop: "5rem" }}>
+          Home
+        </p>
       </header>
       <main>
         <Slider />
