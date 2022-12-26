@@ -59,7 +59,7 @@ function Listing() {
   }
 
   return (
-    <main style={{marginTop: "4rem"}}>
+    <main style={{ marginTop: "4rem" }}>
       <Swiper
         spaceBetween={20}
         centeredSlides={true}
